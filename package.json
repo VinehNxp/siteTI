@@ -1,0 +1,8 @@
+{
+  "scripts": {
+    "build": "node scripts/build-static.js"
+  },
+  "dependencies": {
+    "firebase": "^12.12.0"
+  }
+}

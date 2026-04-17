@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Feedbacks | Vinicius Nogueira</title>
+  <meta
+    name="description"
+    content="Veja avaliações de clientes e publique seu feedback sobre o atendimento técnico de Vinicius Nogueira em Paranavaí - PR."
+  />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <nav id="nav" aria-label="Navegação principal">
+    <div class="container nav-inner">
+      <a href="index.html" class="logo" aria-label="Ir para a página inicial">Tech<span>Fix</span></a>
+
+      <div class="nav-links">
+        <a href="index.html" class="nav-link">Início</a>
+        <a href="servicos.html" class="nav-link">Serviços</a>
+        <a href="feedbacks.html" class="nav-link nav-link--active" aria-current="page">Feedbacks</a>
+        <a href="sobre.html" class="nav-link">Sobre</a>
+        <a href="atendimento.html" class="nav-link nav-link--cta">Orçamento</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <section id="page-hero" aria-labelledby="feedbacks-title">
+      <div class="container">
+        <div class="page-hero-inner">
+          <div class="location-badge">Prova social e confiança</div>
+          <h1 class="h2" id="feedbacks-title">O que dizem sobre meu atendimento</h1>
+          <p class="sub">
+            Avaliações publicadas por clientes atendidos com foco em rapidez, transparência e confiança para resolver problemas de tecnologia com mais segurança.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="feedback-summary" aria-labelledby="feedback-summary-title">
+      <div class="container">
+        <header class="section-head">
+          <div class="chip">Resumo de avaliação</div>
+          <h2 class="h2" id="feedback-summary-title">Confiança construída em cada atendimento</h2>
+          <p class="sub">Os números abaixo são atualizados com base nas avaliações aprovadas publicadas nesta página.</p>
+        </header>
+
+        <div class="feedback-summary-grid">
+          <article class="feedback-summary-card feedback-summary-card--primary fade-up">
+            <span class="feedback-summary-label">Nota média</span>
+            <strong class="feedback-summary-value" data-feedback-average>5.0</strong>
+            <p class="feedback-summary-text">Média das avaliações aprovadas e exibidas para novos visitantes.</p>
+          </article>
+
+          <article class="feedback-summary-card fade-up d1">
+            <span class="feedback-summary-label">Avaliações publicadas</span>
+            <strong class="feedback-summary-value" data-feedback-count>0</strong>
+            <p class="feedback-summary-text">Comentários revisados antes da publicação para manter a página confiável.</p>
+          </article>
+
+          <article class="feedback-summary-card fade-up d2">
+            <span class="feedback-summary-label">Clientes da região</span>
+            <strong class="feedback-summary-value">Paranavaí e região</strong>
+            <p class="feedback-summary-text">Atendimento local para quem busca agilidade, clareza e contato direto no WhatsApp.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="feedback-form-section" aria-labelledby="feedback-form-title">
+      <div class="container">
+        <div class="feedback-form-layout">
+          <article class="feedback-auth-card fade-up">
+            <div class="chip">Enviar avaliação</div>
+            <h2 class="h2" id="feedback-form-title">Publique sua experiência de atendimento</h2>
+            <p class="sub">
+              Entre com sua conta Google, informe sua cidade, escolha a nota por estrelas e envie seu comentário.
+            </p>
+
+            <div class="feedback-user-card" data-review-user hidden>
+              <div class="avatar avatar--image" data-review-user-avatar aria-hidden="true"></div>
+              <div class="feedback-user-copy">
+                <strong data-review-user-name>Cliente autenticado</strong>
+                <span data-review-user-email>email@exemplo.com</span>
+              </div>
+              <button type="button" class="btn btn-ghost feedback-user-signout" data-review-signout>Sair</button>
+            </div>
+
+            <button type="button" class="btn btn-wpp feedback-google-btn" data-review-signin>
+              Entrar com Google para avaliar
+            </button>
+
+            <p class="feedback-helper">
+              As avaliações enviadas entram como <strong>pendentes</strong> e só aparecem na página depois da aprovação.
+            </p>
+
+            <div class="feedback-config-alert" data-feedback-config-alert hidden>
+              O sistema de avaliações ainda não foi configurado. Ative o Firebase em <code>js/firebase-config.js</code>.
+            </div>
+          </article>
+
+          <article class="feedback-form-card fade-up d1">
+            <form id="review-form" class="review-form" novalidate>
+              <div class="field-grid field-grid--stack review-field-stack">
+                <div class="form-group">
+                  <label class="form-label" for="review-city">Cidade</label>
+                  <input
+                    id="review-city"
+                    name="city"
+                    class="form-field"
+                    type="text"
+                    placeholder="Ex.: Paranavaí - PR"
+                    autocomplete="address-level2"
+                    required
+                  />
+                </div>
+
+                <div class="form-group">
+                  <span class="form-label">Nota por estrelas</span>
+                  <div class="rating-picker" role="radiogroup" aria-label="Escolha uma nota" data-rating-picker>
+                    <button type="button" class="rating-star" data-rating-value="1" aria-label="1 estrela">★</button>
+                    <button type="button" class="rating-star" data-rating-value="2" aria-label="2 estrelas">★</button>
+                    <button type="button" class="rating-star" data-rating-value="3" aria-label="3 estrelas">★</button>
+                    <button type="button" class="rating-star" data-rating-value="4" aria-label="4 estrelas">★</button>
+                    <button type="button" class="rating-star" data-rating-value="5" aria-label="5 estrelas">★</button>
+                  </div>
+                  <input type="hidden" name="rating" id="review-rating" required />
+                  <p class="field-note">Selecione de 1 a 5 estrelas para registrar sua avaliação.</p>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" for="review-comment">Comentário</label>
+                  <textarea
+                    id="review-comment"
+                    name="comment"
+                    class="form-field form-field--textarea review-textarea"
+                    placeholder="Conte como foi seu atendimento, o que foi resolvido e o que achou da experiência."
+                    required
+                  ></textarea>
+                </div>
+              </div>
+
+              <div class="review-submit-row">
+                <p class="review-submit-note">
+                  Seu nome e sua foto são puxados da conta Google. A cidade é preenchida por você e a data é registrada automaticamente.
+                </p>
+                <button type="submit" class="btn btn-wpp btn-lg review-submit-btn" data-review-submit disabled>
+                  Enviar avaliação
+                </button>
+              </div>
+
+              <div class="review-form-message" data-review-message aria-live="polite"></div>
+            </form>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="feedback-live" aria-labelledby="feedback-live-title">
+      <div class="container">
+        <header class="section-head">
+          <div class="chip">Avaliações publicadas</div>
+          <h2 class="h2" id="feedback-live-title">Comentários reais exibidos na própria página</h2>
+          <p class="sub">As avaliações abaixo vêm do banco de dados e são mostradas após a moderação.</p>
+        </header>
+
+        <div class="feedback-live-toolbar">
+          <p class="feedback-live-status" data-feedback-live-status>Carregando avaliações publicadas...</p>
+        </div>
+
+        <div class="testimonials" id="published-feedbacks" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <section id="social" aria-labelledby="social-title">
+      <div class="container">
+        <header class="section-head">
+          <div class="chip">Feedbacks em destaque</div>
+          <h2 class="h2" id="social-title">
+            Exemplos de <span class="highlight">resultados e confiança</span>
+          </h2>
+          <p class="sub">A estrutura atual da página foi mantida, e agora convive com as avaliações reais publicadas acima.</p>
+        </header>
+
+        <div class="testimonials" aria-label="Feedbacks em destaque">
+          <article class="tcard fade-up">
+            <div class="tcard-top">
+              <div class="stars" aria-label="5 estrelas">★★★★★</div>
+              <div class="tcard-meta">Formatação e otimização</div>
+            </div>
+            <blockquote class="tcard-text">"Meu computador estava travando bastante e depois do atendimento ficou bem mais rápido. O processo foi claro do começo ao fim."</blockquote>
+            <footer class="tcard-author">
+              <div class="avatar" aria-hidden="true">M</div>
+              <div>
+                <div class="tcard-name">Marcos Silva</div>
+                <div class="tcard-city">Paranavaí - PR</div>
+              </div>
+            </footer>
+          </article>
+
+          <article class="tcard fade-up d1">
+            <div class="tcard-top">
+              <div class="stars" aria-label="5 estrelas">★★★★★</div>
+              <div class="tcard-meta">Suporte remoto</div>
+            </div>
+            <blockquote class="tcard-text">"Resolveu meu problema pelo acesso remoto sem enrolação. Gostei porque explicou tudo de forma simples e objetiva."</blockquote>
+            <footer class="tcard-author">
+              <div class="avatar" aria-hidden="true">L</div>
+              <div>
+                <div class="tcard-name">Larissa Mendes</div>
+                <div class="tcard-city">Maringá - PR</div>
+              </div>
+            </footer>
+          </article>
+
+          <article class="tcard fade-up d2">
+            <div class="tcard-top">
+              <div class="stars" aria-label="5 estrelas">★★★★★</div>
+              <div class="tcard-meta">Atendimento em computador</div>
+            </div>
+            <blockquote class="tcard-text">"Atendimento rápido e muito transparente. Passou confiança, mostrou o problema e não ficou tentando empurrar serviço."</blockquote>
+            <footer class="tcard-author">
+              <div class="avatar" aria-hidden="true">R</div>
+              <div>
+                <div class="tcard-name">Renata Oliveira</div>
+                <div class="tcard-city">Nova Londrina - PR</div>
+              </div>
+            </footer>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="feedback-diffs" aria-labelledby="feedback-diffs-title">
+      <div class="container">
+        <header class="section-head">
+          <div class="chip">Por que confiam</div>
+          <h2 class="h2" id="feedback-diffs-title">Os pontos que mais aparecem nas avaliações</h2>
+          <p class="sub">Uma leitura rápida dos diferenciais que ajudam a transformar visita em contato no WhatsApp.</p>
+        </header>
+
+        <div class="diff-grid">
+          <article class="diff-card fade-up">
+            <div class="diff-icon" aria-hidden="true">01</div>
+            <h3>Atendimento direto</h3>
+            <p>Comunicação simples, sem termos desnecessários e sem enrolação na hora de orientar o cliente.</p>
+          </article>
+
+          <article class="diff-card fade-up d1">
+            <div class="diff-icon" aria-hidden="true">02</div>
+            <h3>Clareza no diagnóstico</h3>
+            <p>O problema e a solução são explicados com objetividade para gerar confiança antes do serviço.</p>
+          </article>
+
+          <article class="diff-card fade-up d2">
+            <div class="diff-icon" aria-hidden="true">03</div>
+            <h3>Rapidez no retorno</h3>
+            <p>Contato ágil no WhatsApp e atendimento pensado para reduzir a demora na solução do problema.</p>
+          </article>
+
+          <article class="diff-card fade-up">
+            <div class="diff-icon" aria-hidden="true">04</div>
+            <h3>Preço justo</h3>
+            <p>Clientes valorizam quando o atendimento é honesto, coerente com a necessidade e sem exageros.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="feedback-cta" aria-labelledby="feedback-cta-title">
+      <div class="container">
+        <div class="cta-inner">
+          <div class="chip">Fale direto comigo</div>
+          <h2 class="h2" id="feedback-cta-title">Quer resolver seu problema com rapidez e confiança?</h2>
+          <p class="sub">
+            Me chama no WhatsApp e fale direto comigo para explicar o que você precisa. O atendimento começa de forma simples e sem complicação.
+          </p>
+
+          <a
+            href="https://wa.me/5544991792301?text=Olá! Vi a página de feedbacks e quero falar sobre um atendimento."
+            class="btn btn-wpp btn-lg"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <svg class="wpp-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+            </svg>
+            Chamar no WhatsApp
+          </a>
+
+          <div class="trust-row" aria-label="Pontos de confiança">
+            <div class="trust-item">Resposta rápida</div>
+            <div class="trust-item">Atendimento humano</div>
+            <div class="trust-item">Clareza no orçamento</div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-block">
+          <div class="footer-logo">Vinicius <span>Nogueira</span></div>
+          <p class="footer-text">Suporte técnico em computadores e celulares.</p>
+          <p class="footer-meta">Paranavaí - PR</p>
+        </div>
+
+        <div class="footer-block">
+          <h3 class="footer-title">Links rápidos</h3>
+          <nav class="footer-links" aria-label="Links rápidos do rodapé">
+            <a href="index.html">Home</a>
+            <a href="servicos.html">Serviços</a>
+            <a href="sobre.html">Sobre</a>
+            <a href="atendimento.html">Atendimento</a>
+          </nav>
+        </div>
+
+        <div class="footer-block">
+          <h3 class="footer-title">Contato</h3>
+          <p class="footer-text">Fale comigo pelo WhatsApp.</p>
+          <a
+            href="https://wa.me/5544991792301?text=Olá! Quero falar com Vinicius Nogueira."
+            class="footer-whatsapp"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            WhatsApp direto
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="footer-copy">© 2026 Vinicius Nogueira - Todos os direitos reservados</p>
+      </div>
+    </div>
+  </footer>
+
+  <a id="wpp-float"
+     href="https://wa.me/5544991792301?text=Olá! Quero falar com Vinicius Nogueira."
+     target="_blank"
+     rel="noopener noreferrer"
+     aria-label="Abrir WhatsApp">
+    <svg class="wpp-icon wpp-icon-lg" viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+    </svg>
+    <span class="float-label">Falar no WhatsApp</span>
+  </a>
+
+  <script src="js/main.js"></script>
+  <script type="module" src="js/feedbacks.js"></script>
+</body>
+</html>

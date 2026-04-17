@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Orçamento técnico em Paranavaí | Atendimento via WhatsApp</title>
+  <meta
+    name="description"
+    content="Solicite orçamento de manutenção e suporte técnico em Paranavaí - PR. Informe seus dados, escolha o dispositivo, selecione o serviço e envie tudo direto para o WhatsApp."
+  />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <nav id="nav" aria-label="Navegação principal">
+    <div class="container nav-inner">
+      <a href="index.html" class="logo" aria-label="Ir para a página inicial">Tech<span>Fix</span></a>
+
+      <div class="nav-links">
+        <a href="index.html" class="nav-link">Início</a>
+        <a href="servicos.html" class="nav-link">Serviços</a>
+        <a href="feedbacks.html" class="nav-link">Feedbacks</a>
+        <a href="sobre.html" class="nav-link">Sobre</a>
+        <a href="atendimento.html" class="nav-link nav-link--cta nav-link--active" aria-current="page">Orçamento</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <section id="page-hero" aria-labelledby="att-page-title">
+      <div class="container">
+        <div class="page-hero-inner">
+          <div class="location-badge">Atendimento em Paranavaí - PR com suporte remoto quando possível</div>
+
+          <h1 class="h2" id="att-page-title">Peça seu orçamento em poucos passos e envie tudo pronto no WhatsApp</h1>
+
+          <p class="sub">
+            Preencha uma etapa por vez, escolha o serviço certo e envie sua solicitação com mais clareza e menos atrito.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="att-flow" aria-labelledby="att-form-title">
+      <div class="container">
+        <div class="att-layout">
+          <aside class="att-sidebar fade-up" aria-labelledby="att-sidebar-title">
+            <div class="chip">Atendimento rápido</div>
+            <h2 class="h2" id="att-sidebar-title">Dados organizados desde o início para reduzir retrabalho no atendimento.</h2>
+            <p class="sub">
+              O formulário coleta localização, filtra os serviços corretos por dispositivo e inclui pacotes completos como opção.
+            </p>
+
+            <div class="att-points" aria-label="Benefícios do atendimento">
+              <div class="att-point">
+                <span class="att-point__icon" aria-hidden="true">01</span>
+                <span>
+                  <strong>Dados do cliente primeiro</strong>
+                  <span>Nome, estado e cidade definidos antes de escolher o serviço.</span>
+                </span>
+              </div>
+
+              <div class="att-point">
+                <span class="att-point__icon" aria-hidden="true">02</span>
+                <span>
+                  <strong>Serviços e pacotes completos</strong>
+                  <span>O formulário mostra opções individuais e pacotes por dispositivo.</span>
+                </span>
+              </div>
+
+              <div class="att-point">
+                <span class="att-point__icon" aria-hidden="true">03</span>
+                <span>
+                  <strong>Envio final direto</strong>
+                  <span>O WhatsApp só aparece no fim, com a mensagem já montada.</span>
+                </span>
+              </div>
+            </div>
+          </aside>
+
+          <div class="att-shell fade-up d1">
+            <div class="att-shell-head">
+              <div>
+                <div class="chip">Orçamento inteligente</div>
+                <h2 class="h2" id="att-form-title">Preencha em etapas e envie sua solicitação do jeito certo</h2>
+                <p class="sub">
+                  Fluxo em etapas com progresso visível, troca mais suave e filtro dinâmico por dispositivo.
+                </p>
+              </div>
+
+              <div class="form-progress" aria-label="Progresso do formulário">
+                <div class="form-progress-meta">
+                  <span class="form-progress-label" id="form-progress-label">Etapa 1 de 5</span>
+                  <span class="form-progress-percent" id="form-progress-percent">20%</span>
+                </div>
+                <div class="form-progress-track" aria-hidden="true">
+                  <span class="form-progress-fill" id="form-progress-fill"></span>
+                </div>
+              </div>
+            </div>
+
+            <form id="atendimento-form" novalidate>
+              <div class="step-panels">
+                <section class="step-panel is-active" data-step="1" aria-labelledby="step-client-title">
+                  <div class="step-tag">Etapa 1</div>
+                  <h3 class="step-title" id="step-client-title">Primeiro, seus dados</h3>
+                  <p class="step-copy">
+                    Preencha seu nome, estado e cidade para eu entender de onde vem seu atendimento.
+                  </p>
+
+                  <div class="field-grid field-grid--stack">
+                    <label class="form-group" for="customer-name">
+                      <span class="form-label">Nome</span>
+                      <input class="form-field" type="text" id="customer-name" name="name" placeholder="Seu nome" autocomplete="name" />
+                    </label>
+
+                    <label class="form-group" for="customer-state">
+                      <span class="form-label">Estado (UF)</span>
+                      <select class="form-field form-field--select" id="customer-state" name="state">
+                        <option value="">Selecione um estado</option>
+                      </select>
+                    </label>
+
+                    <label class="form-group" for="customer-city">
+                      <span class="form-label">Cidade</span>
+                      <select class="form-field form-field--select" id="customer-city" name="city" disabled>
+                        <option value="">Selecione primeiro o estado</option>
+                      </select>
+                    </label>
+                  </div>
+
+                  <p class="field-note">A lista de cidades aparece automaticamente depois que você escolhe o estado.</p>
+                  <p class="step-error" data-step-error="1" hidden></p>
+                </section>
+
+                <section class="step-panel" data-step="2" aria-labelledby="step-device-title">
+                  <div class="step-tag">Etapa 2</div>
+                  <h3 class="step-title" id="step-device-title">Qual é o seu dispositivo?</h3>
+                  <p class="step-copy">
+                    Escolha o tipo de aparelho para eu mostrar só os serviços e pacotes compatíveis.
+                  </p>
+
+                  <div class="choice-grid">
+                    <button type="button" class="choice-card" data-device="computer" aria-pressed="false">
+                      <span class="choice-card__icon" aria-hidden="true">💻</span>
+                      <span class="choice-card__title">Computador / Notebook</span>
+                      <span class="choice-card__desc">Serviços técnicos, manutenção, suporte remoto e pacotes para computador.</span>
+                    </button>
+
+                    <button type="button" class="choice-card" data-device="mobile" aria-pressed="false">
+                      <span class="choice-card__icon" aria-hidden="true">📱</span>
+                      <span class="choice-card__title">Celular / Tablet</span>
+                      <span class="choice-card__desc">Serviços de limpeza, configuração, formatação e pacotes para celular.</span>
+                    </button>
+                  </div>
+
+                  <p class="step-error" data-step-error="2" hidden></p>
+                </section>
+
+                <section class="step-panel" data-step="3" aria-labelledby="step-service-title">
+                  <div class="step-tag">Etapa 3</div>
+                  <h3 class="step-title" id="step-service-title">Escolha o serviço ou pacote</h3>
+                  <p class="step-copy">
+                    Veja as opções mais adequadas para <span class="device-context" id="device-context">o dispositivo selecionado</span>.
+                  </p>
+
+                  <div class="service-groups" id="service-groups" aria-live="polite">
+                    <div class="service-group">
+                      <h4 class="service-group__title">Serviços individuais</h4>
+                      <div class="choice-grid" id="service-options"></div>
+                    </div>
+
+                    <div class="service-group">
+                      <h4 class="service-group__title">Pacotes</h4>
+                      <div class="choice-grid" id="package-options"></div>
+                    </div>
+                  </div>
+
+                  <p class="field-note" id="service-empty" hidden>Escolha um dispositivo para carregar os serviços disponíveis.</p>
+                  <p class="step-error" data-step-error="3" hidden></p>
+                </section>
+
+                <section class="step-panel" data-step="4" aria-labelledby="step-problem-title">
+                  <div class="step-tag">Etapa 4</div>
+                  <h3 class="step-title" id="step-problem-title">Explique rapidamente o problema</h3>
+                  <p class="step-copy">
+                    Escreva com suas palavras o que está acontecendo. Isso será enviado junto com seus dados.
+                  </p>
+
+                  <label class="form-group" for="problem">
+                    <textarea
+                      class="form-field form-field--textarea"
+                      id="problem"
+                      name="problem"
+                      placeholder="Ex.: está lento ao ligar, travando ao abrir programas ou com vírus aparecendo toda hora..."
+                    ></textarea>
+                  </label>
+
+                  <p class="step-error" data-step-error="4" hidden></p>
+                </section>
+
+                <section class="step-panel" data-step="5" aria-labelledby="step-review-title">
+                  <div class="step-tag">Etapa 5</div>
+                  <h3 class="step-title" id="step-review-title">Confira seus dados antes de enviar</h3>
+                  <p class="step-copy">
+                    Você será redirecionado para o WhatsApp com sua solicitação pronta.
+                  </p>
+
+                  <article class="review-card" aria-labelledby="review-title">
+                    <div class="review-card__head">
+                      <h4 id="review-title">Resumo da solicitação</h4>
+                      <p>Confirme as informações abaixo antes de abrir o WhatsApp.</p>
+                    </div>
+
+                    <div class="review-list">
+                      <div class="review-row">
+                        <span>Nome</span>
+                        <strong id="review-name">Não informado</strong>
+                      </div>
+                      <div class="review-row">
+                        <span>Estado</span>
+                        <strong id="review-state">Não selecionado</strong>
+                      </div>
+                      <div class="review-row">
+                        <span>Cidade</span>
+                        <strong id="review-city">Não selecionada</strong>
+                      </div>
+                      <div class="review-row">
+                        <span>Dispositivo</span>
+                        <strong id="review-device">Não selecionado</strong>
+                      </div>
+                      <div class="review-row">
+                        <span>Serviço</span>
+                        <strong id="review-service">Não selecionado</strong>
+                      </div>
+                      <div class="review-row">
+                        <span>Problema</span>
+                        <strong id="review-problem">Não informado</strong>
+                      </div>
+                    </div>
+                  </article>
+
+                  <p class="review-warning">Você será redirecionado para o WhatsApp com a mensagem pronta para envio.</p>
+                  <p class="step-error" data-step-error="5" hidden></p>
+                </section>
+              </div>
+
+              <div class="form-actions">
+                <p class="form-note">Você avança etapa por etapa e, no final, abre o WhatsApp com a solicitação já pronta para enviar.</p>
+
+                <div class="form-actions-group">
+                  <button type="button" class="btn btn-ghost" id="prev-step" hidden>Voltar</button>
+                  <button type="button" class="btn btn-wpp" id="next-step">Continuar</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-block">
+          <div class="footer-logo">Vinicius <span>Nogueira</span></div>
+          <p class="footer-text">Suporte técnico em computadores e celulares.</p>
+          <p class="footer-meta">Paranavaí - PR</p>
+        </div>
+
+        <div class="footer-block">
+          <h3 class="footer-title">Links rápidos</h3>
+          <nav class="footer-links" aria-label="Links rápidos do rodapé">
+            <a href="index.html">Home</a>
+            <a href="servicos.html">Serviços</a>
+            <a href="sobre.html">Sobre</a>
+            <a href="atendimento.html">Atendimento</a>
+          </nav>
+        </div>
+
+        <div class="footer-block">
+          <h3 class="footer-title">Contato</h3>
+          <p class="footer-text">Fale comigo pelo WhatsApp.</p>
+          <a
+            href="https://wa.me/5544991792301?text=Olá! Quero falar com Vinicius Nogueira."
+            class="footer-whatsapp"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            WhatsApp direto
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="footer-copy">© 2026 Vinicius Nogueira - Todos os direitos reservados</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/atendimento.js"></script>
+</body>
+</html>
