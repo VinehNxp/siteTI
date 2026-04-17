@@ -11,7 +11,10 @@ const entriesToCopy = [
   'atendimento.html',
   'feedbacks.html',
   'css',
-  'js',
+  'js'
+];
+
+const optionalEntriesToCopy = [
   'assets'
 ];
 
@@ -53,6 +56,14 @@ for (const entry of entriesToCopy) {
   }
 
   copyEntry(sourcePath, path.join(distDir, entry));
+}
+
+for (const entry of optionalEntriesToCopy) {
+  const sourcePath = path.join(rootDir, entry);
+
+  if (fs.existsSync(sourcePath)) {
+    copyEntry(sourcePath, path.join(distDir, entry));
+  }
 }
 
 console.log('Build estatico concluido em dist/');
