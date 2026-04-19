@@ -56,6 +56,21 @@ if (navToggle && navLinks) {
     }
   });
 
+  document.addEventListener('click', (event) => {
+    if (window.innerWidth > 640) return;
+
+    const clickedInsideNav = nav.contains(event.target);
+    if (!clickedInsideNav) {
+      setMobileNavState(false);
+    }
+  });
+
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') {
+      setMobileNavState(false);
+    }
+  });
+
   setMobileNavState(false);
 }
 
