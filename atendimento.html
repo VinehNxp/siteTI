@@ -19,9 +19,26 @@
 
   <nav id="nav" aria-label="Navegação principal">
     <div class="container nav-inner">
-      <a href="index.html" class="logo" aria-label="Ir para a página inicial">Tech<span>Fix</span></a>
+      <a href="index.html" class="logo" aria-label="Ir para a página inicial">
+        <span class="logo-mark" aria-hidden="true">
+          <span class="logo-screen"></span>
+          <span class="logo-tool"></span>
+          <span class="logo-pixel logo-pixel--1"></span>
+          <span class="logo-pixel logo-pixel--2"></span>
+          <span class="logo-pixel logo-pixel--3"></span>
+        </span>
+        <span class="logo-word">
+          <span class="logo-tech">Tech</span><span class="logo-fix">Fix</span>
+        </span>
+      </a>
 
-      <div class="nav-links">
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Abrir menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <div class="nav-links" id="primary-nav">
         <a href="index.html" class="nav-link">Início</a>
         <a href="servicos.html" class="nav-link">Serviços</a>
         <a href="feedbacks.html" class="nav-link">Feedbacks</a>

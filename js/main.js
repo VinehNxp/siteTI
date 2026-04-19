@@ -2,7 +2,7 @@
  * main.js - TechFix Suporte Tecnico
  *
  * Modulos:
- *   1. Nav: efeito de scroll
+ *   1. Nav: efeito de scroll e menu mobile
  *   2. Scroll animations: fade-up via IntersectionObserver
  *   3. Counter animation
  *   4. Status de atendimento
@@ -16,6 +16,16 @@
 /* --- 1. NAV --- */
 
 const nav = document.getElementById('nav');
+const navToggle = document.querySelector('.nav-toggle');
+const navLinks = document.querySelector('.nav-links');
+
+function setMobileNavState(isOpen) {
+  if (!navToggle || !navLinks) return;
+
+  document.body.classList.toggle('nav-open', isOpen);
+  navToggle.setAttribute('aria-expanded', String(isOpen));
+  navToggle.setAttribute('aria-label', isOpen ? 'Fechar menu' : 'Abrir menu');
+}
 
 if (nav) {
   const onScroll = () => {
@@ -24,6 +34,29 @@ if (nav) {
 
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
+}
+
+if (navToggle && navLinks) {
+  navToggle.addEventListener('click', () => {
+    const isOpen = navToggle.getAttribute('aria-expanded') !== 'true';
+    setMobileNavState(isOpen);
+  });
+
+  navLinks.querySelectorAll('.nav-link').forEach((link) => {
+    link.addEventListener('click', () => {
+      if (window.innerWidth <= 640) {
+        setMobileNavState(false);
+      }
+    });
+  });
+
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 640) {
+      setMobileNavState(false);
+    }
+  });
+
+  setMobileNavState(false);
 }
 
 
