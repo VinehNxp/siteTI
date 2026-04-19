@@ -37,10 +37,17 @@ if (nav) {
 }
 
 if (navToggle && navLinks) {
-  navToggle.addEventListener('click', () => {
+  const toggleMobileMenu = (event) => {
+    event.preventDefault();
+    event.stopPropagation();
+
     const isOpen = navToggle.getAttribute('aria-expanded') !== 'true';
     setMobileNavState(isOpen);
-  });
+  };
+
+  navToggle.addEventListener('click', toggleMobileMenu);
+  navToggle.addEventListener('pointerup', toggleMobileMenu);
+  navToggle.addEventListener('touchend', toggleMobileMenu, { passive: false });
 
   navLinks.querySelectorAll('.nav-link').forEach((link) => {
     link.addEventListener('click', () => {
@@ -56,7 +63,7 @@ if (navToggle && navLinks) {
     }
   });
 
-  document.addEventListener('click', (event) => {
+  document.addEventListener('pointerdown', (event) => {
     if (window.innerWidth > 640) return;
 
     const clickedInsideNav = nav.contains(event.target);
