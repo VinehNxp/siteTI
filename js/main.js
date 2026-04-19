@@ -18,6 +18,7 @@
 const nav = document.getElementById('nav');
 const navToggle = document.querySelector('.nav-toggle');
 const navLinks = document.querySelector('.nav-links');
+const mobileNavMedia = window.matchMedia('(max-width: 860px), (hover: none) and (pointer: coarse)');
 
 function setMobileNavState(isOpen) {
   if (!navToggle || !navLinks) return;
@@ -51,20 +52,20 @@ if (navToggle && navLinks) {
 
   navLinks.querySelectorAll('.nav-link').forEach((link) => {
     link.addEventListener('click', () => {
-      if (window.innerWidth <= 640) {
+      if (mobileNavMedia.matches) {
         setMobileNavState(false);
       }
     });
   });
 
   window.addEventListener('resize', () => {
-    if (window.innerWidth > 640) {
+    if (!mobileNavMedia.matches) {
       setMobileNavState(false);
     }
   });
 
   document.addEventListener('pointerdown', (event) => {
-    if (window.innerWidth > 640) return;
+    if (!mobileNavMedia.matches) return;
 
     const clickedInsideNav = nav.contains(event.target);
     if (!clickedInsideNav) {

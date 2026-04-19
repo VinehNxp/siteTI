@@ -1534,7 +1534,7 @@ footer,
 }
 
 /* Mobile */
-@media (max-width: 640px) {
+@media (max-width: 860px), (hover: none) and (pointer: coarse) {
   section { padding: 72px 0; }
 
   .container {
@@ -2085,7 +2085,7 @@ a.logo:hover .logo-word {
   .special-card-text p { max-width: 100%; }
 }
 
-@media (max-width: 640px) {
+@media (max-width: 860px), (hover: none) and (pointer: coarse) {
   #page-hero { padding-top: 124px; padding-bottom: 56px; }
 
   .srv-grid {
@@ -2392,7 +2392,7 @@ a.srv-card { cursor: pointer; }
   }
 }
 
-@media (max-width: 640px) {
+@media (max-width: 860px), (hover: none) and (pointer: coarse) {
   .about-card,
   .objective-panel {
     padding: 28px 22px;
@@ -2942,7 +2942,7 @@ a.srv-card { cursor: pointer; }
   }
 }
 
-@media (max-width: 640px) {
+@media (max-width: 860px), (hover: none) and (pointer: coarse) {
   footer,
   .site-footer {
     padding: 34px 0 22px;
